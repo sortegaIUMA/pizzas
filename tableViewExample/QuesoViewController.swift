@@ -50,16 +50,16 @@ class QuesoViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Do something:
         miPizza?.queso = lista?[indexPath.row]
         
         // Navigate:
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "IngredientesView");
-        self.navigationController?.pushViewController(viewController!, animated: true)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "IngredientesView") as! IngredientesViewController
+        viewController.miPizza = self.miPizza
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    
-    
+  
     
 }

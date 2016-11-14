@@ -50,15 +50,15 @@ class IngredientesViewController: UIViewController, UITableViewDelegate, UITable
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Do something:
         miPizza?.ingredientes = lista?[indexPath.row]
         
         // Navigation:
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "ConfirmacionView");
-        self.navigationController?.pushViewController(viewController!, animated: true)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "ConfirmacionView") as! ConfirmacionViewController
+        viewController.miPizza = self.miPizza
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
     
     
     

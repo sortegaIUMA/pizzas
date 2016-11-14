@@ -50,18 +50,17 @@ class MasaViewController: UIViewController , UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Do something:
         miPizza?.masa = lista?[indexPath.row]
         
         // Navigation:
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "QuesoView");
-        self.navigationController?.pushViewController(viewController!, animated: true)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "QuesoView") as! QuesoViewController
+        viewController.miPizza = self.miPizza
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    // ?? Navigation:
-    
-    
+
     
 }
 

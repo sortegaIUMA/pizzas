@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var myTable: UITableView!
     
-    var miPizza : Pizza? = Pizza();
+    var miPizza : Pizza?;
     var lista = tipoTamaño
     
     override func viewDidLoad() {
@@ -50,17 +50,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Do something:
+        miPizza = Pizza()
         miPizza?.tamaño = lista?[indexPath.row];
         // Navigate:
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "MasaView");
-        self.navigationController?.pushViewController(viewController!, animated: true)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "MasaView") as! MasaViewController
+        viewController.miPizza = self.miPizza
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     
-    
-    // ?? Navigation:
+  
     
 
 
