@@ -12,6 +12,11 @@
 		2EA505061DDA502C00C4CD02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA505041DDA502C00C4CD02 /* Main.storyboard */; };
 		2EA505081DDA502C00C4CD02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EA505071DDA502C00C4CD02 /* Assets.xcassets */; };
 		2EA5050B1DDA502C00C4CD02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA505091DDA502C00C4CD02 /* LaunchScreen.storyboard */; };
+		2EA505131DDA5A6C00C4CD02 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA505121DDA5A6C00C4CD02 /* Pizza.swift */; };
+		2EA505151DDA5C0100C4CD02 /* MasaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA505141DDA5C0100C4CD02 /* MasaViewController.swift */; };
+		2EA505171DDA5D0500C4CD02 /* QuesoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA505161DDA5D0500C4CD02 /* QuesoViewController.swift */; };
+		2EA505191DDA5D8300C4CD02 /* IngredientesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA505181DDA5D8300C4CD02 /* IngredientesViewController.swift */; };
+		2EA5051B1DDA5EFD00C4CD02 /* ConfirmacionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA5051A1DDA5EFD00C4CD02 /* ConfirmacionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		2EA505071DDA502C00C4CD02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EA5050A1DDA502C00C4CD02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EA5050C1DDA502C00C4CD02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2EA505121DDA5A6C00C4CD02 /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		2EA505141DDA5C0100C4CD02 /* MasaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasaViewController.swift; sourceTree = "<group>"; };
+		2EA505161DDA5D0500C4CD02 /* QuesoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuesoViewController.swift; sourceTree = "<group>"; };
+		2EA505181DDA5D8300C4CD02 /* IngredientesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientesViewController.swift; sourceTree = "<group>"; };
+		2EA5051A1DDA5EFD00C4CD02 /* ConfirmacionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmacionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +67,14 @@
 				2EA505001DDA502C00C4CD02 /* AppDelegate.swift */,
 				2EA505021DDA502C00C4CD02 /* ViewController.swift */,
 				2EA505041DDA502C00C4CD02 /* Main.storyboard */,
+				2EA5051A1DDA5EFD00C4CD02 /* ConfirmacionViewController.swift */,
+				2EA505181DDA5D8300C4CD02 /* IngredientesViewController.swift */,
+				2EA505161DDA5D0500C4CD02 /* QuesoViewController.swift */,
+				2EA505141DDA5C0100C4CD02 /* MasaViewController.swift */,
 				2EA505071DDA502C00C4CD02 /* Assets.xcassets */,
 				2EA505091DDA502C00C4CD02 /* LaunchScreen.storyboard */,
 				2EA5050C1DDA502C00C4CD02 /* Info.plist */,
+				2EA505121DDA5A6C00C4CD02 /* Pizza.swift */,
 			);
 			path = tableViewExample;
 			sourceTree = "<group>";
@@ -136,8 +151,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EA505191DDA5D8300C4CD02 /* IngredientesViewController.swift in Sources */,
+				2EA505151DDA5C0100C4CD02 /* MasaViewController.swift in Sources */,
+				2EA5051B1DDA5EFD00C4CD02 /* ConfirmacionViewController.swift in Sources */,
 				2EA505031DDA502C00C4CD02 /* ViewController.swift in Sources */,
 				2EA505011DDA502C00C4CD02 /* AppDelegate.swift in Sources */,
+				2EA505131DDA5A6C00C4CD02 /* Pizza.swift in Sources */,
+				2EA505171DDA5D0500C4CD02 /* QuesoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QuesoViewController.swift
 //  tableViewExample
 //
 //  Created by Samuel Ortega Sarmiento on 14/11/16.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class QuesoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var myTable: UITableView!
     
-    var miPizza : Pizza? = Pizza();
-    var lista = tipoTamaño
+    var miPizza : Pizza?;
+    var lista = tipoQueso
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myTable.dataSource = self
         myTable.delegate = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,17 +52,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         // Do something:
-        miPizza?.tamaño = lista?[indexPath.row];
+        miPizza?.queso = lista?[indexPath.row]
+        
         // Navigate:
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "MasaView");
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "IngredientesView");
         self.navigationController?.pushViewController(viewController!, animated: true)
     }
     
     
     
-    // ?? Navigation:
     
-
-
 }
-
