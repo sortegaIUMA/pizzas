@@ -47,12 +47,19 @@ class tmpViewController: UIViewController {
                 self.myLabels?[k-1].text = miPizza?.ingredientes?[k-1]
              }
         
+        for k in numeroIngredientes + 1 ... 5 {
+            self.myLabels?[k-1].isHidden = true; //  text = "-----"
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+        
+        
     
 
     /*
