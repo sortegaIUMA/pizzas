@@ -8,21 +8,24 @@
 
 import Foundation
 
-var tipoTamaño      : [String]? = ["Grande", "Mediana", "Pequeña"];
-var tipoMasa        : [String]? = ["Fina", "Gruesa", "tres", "Cuatro"];
-var tipoQueso       : [String]? = ["Mozarella", "Parmesano", "Q3", "Q4", "Q5"]
-var tipoIngrediente : [String]? = ["Gambas", "Bacon", "Piña"];
+var tipoTamaño      : [String]? = ["Chica", "Mediana", "Grande"];
+var tipoMasa        : [String]? = ["Fina", "Gruesa", "Crujiente"];
+var tipoQueso       : [String]? = ["Mozarella", "Parmesano", "Cheddar", "Sin queso"]
+var tipoIngrediente : [String]? = ["Jamón", "Peperoni", "Pavo", "Salchicha", "Aceituna", "Cebolla", "Pimiento", "Atún", "Bacon"];
+
 
 class Pizza  {
     var tamaño: String?
     var masa  : String?
     var queso : String?
-    var ingredientes : String?
+    var ingredientes : [String]?
     
     init() {
         self.tamaño       = nil;
         self.masa         = nil;
         self.queso        = nil;
         self.ingredientes = nil;
+        
+        
     }
 }

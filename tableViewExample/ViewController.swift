@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     @IBOutlet weak var myTable: UITableView!
     
-    var miPizza : Pizza?;
+    var miPizza : Pizza? = Pizza()
     var lista = tipoTamaño
     
     override func viewDidLoad() {
@@ -24,8 +24,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         myTable.dataSource = self
         myTable.delegate = self
+        
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        myTable.contentInset = UIEdgeInsetsMake(60,0,0,0);
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,15 +57,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Do something:
-        miPizza = Pizza()
+
+       
         miPizza?.tamaño = lista?[indexPath.row];
+        self.performSegue(withIdentifier: "masaSegue", sender: self)
         // Navigate:
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "MasaView") as! MasaViewController
-        viewController.miPizza = self.miPizza
-        self.navigationController?.pushViewController(viewController, animated: true)
+//        let viewController = storyboard?.instantiateViewController(withIdentifier: "MasaView") as! MasaViewController
+      //  viewController.miPizza = self.miPizza
+      //  self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nextView = segue.destination as! MasaViewController
+        nextView.miPizza = self.miPizza;
+    }
   
     
 

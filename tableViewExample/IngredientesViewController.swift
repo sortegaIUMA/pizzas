@@ -26,6 +26,11 @@ class IngredientesViewController: UIViewController, UITableViewDelegate, UITable
         myTable.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        myTable.contentInset = UIEdgeInsetsMake(60,0,0,0);
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(addTapped))
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,14 +57,50 @@ class IngredientesViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Do something:
-        miPizza?.ingredientes = lista?[indexPath.row]
         
+        let ingredienteActual = (lista?[indexPath.row])!
+        
+        let currentIndex = miPizza?.ingredientes?.index(of: ingredienteActual)
+        
+        if (currentIndex == nil){
+            
+            if miPizza?.ingredientes == nil {
+                miPizza?.ingredientes = [ingredienteActual]
+            }else{
+                miPizza?.ingredientes?.append(ingredienteActual)
+            }
+
+            if let cell = tableView.cellForRow(at: indexPath) {
+                cell.accessoryType = .checkmark
+                
+            }
+            
+            
+        }else{
+            miPizza?.ingredientes?.remove(at: currentIndex!)
+        
+            if let cell = tableView.cellForRow(at: indexPath) {
+                cell.accessoryType = .none
+            
+            }
+       
+        }
+        
+        if ( (miPizza?.ingredientes?.count)! > 4){
+            // Navigation:
+            let viewController = storyboard?.instantiateViewController(withIdentifier: "tmpVC") as! tmpViewController//ConfirmacionViewController
+            viewController.miPizza = self.miPizza
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
+    
+
+    func addTapped(){
         // Navigation:
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "ConfirmacionView") as! ConfirmacionViewController
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "tmpVC") as!  tmpViewController//ConfirmacionViewController
         viewController.miPizza = self.miPizza
         self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
     
     
 }

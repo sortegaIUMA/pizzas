@@ -31,6 +31,11 @@ class MasaViewController: UIViewController , UITableViewDelegate, UITableViewDat
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        myTable.contentInset = UIEdgeInsetsMake(60,0,0,0);
+        
+    }
+    
     // TableView:
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
